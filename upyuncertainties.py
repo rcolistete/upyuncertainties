@@ -27,10 +27,6 @@ class ufloat:
             return (self.nominal_value == v.nominal_value) and (self.std_dev == v.std_dev)
         return False
 
-# Disponível em MicroPython qual versão ? WiPyFloat tem __abs__
-#    def __abs__(self):
-#        return ufloat(abs(self.nominal_value), self.std_dev)
-
     def __add__(self, v):
         if type(v) == ufloat:
             return ufloat(self.nominal_value + v.nominal_value, (self.std_dev**2 + v.std_dev**2)**0.5)
